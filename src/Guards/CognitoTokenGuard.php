@@ -300,14 +300,7 @@ class CognitoTokenGuard extends TokenGuard
      * @return \Illuminate\Contracts\Auth\Authenticatable
      */
     public function user() {
-
-        //Check if the user exists
-        if (!is_null($this->user)) {
-			return $this->user;
-		} //End if
-
-        //Retrieve token from request and authenticate
-		return $this->getTokenForRequest();
+        return $this->user ?? null;
     } //Function ends
 
 
